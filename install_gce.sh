@@ -6,10 +6,11 @@ mv ctrl/* .
 
 # Cython is needed to compile fastBPE
 pip install Cython
+pip install gsutil
 
 # Patch the TensorFlow estimator package
 FILE="/usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py"
-sudo patch -b "$FILE" estimator.patch
+patch -b "$FILE" estimator.patch
 
 # Install fastBPE
 git clone https://github.com/glample/fastBPE.git
